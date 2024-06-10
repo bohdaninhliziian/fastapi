@@ -49,9 +49,9 @@ jobs:
         - name: run docker-compose
           uses: appleboy/ssh-action@v1.0.0
           with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USERNAME }}
-            key: ${{ secrets.KEY }}
+            host: ${{ secrets.AWS_HOST }}
+            username: ${{ secrets.AWS_USERNAME }}
+            key: ${{ secrets.AWS_KEY }}
             script: |
               docker compose down
               docker rmi -f $(docker images -q)
